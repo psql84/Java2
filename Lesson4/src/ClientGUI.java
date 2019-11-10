@@ -126,15 +126,14 @@ public class ClientGUI  extends JFrame implements ActionListener, Thread.Uncaugh
         String[] arr= logTEXT.split("\n");
         ArrayList<String> arrList = new ArrayList<String>();
         for(String line: arr){
-          arrList.add(line);//System.out.println(arrList);
-
+          arrList.add(line);
         }
         List<String> links1 =  Files.readAllLines(Paths.get("LOGFILE.txt"), StandardCharsets.UTF_8);
           
            links1.addAll(arrList);
            LinkedHashSet<String> set = new LinkedHashSet<>(links1);
            Files.write(Paths.get("LOGFILE.txt"), set, StandardCharsets.UTF_8);
-          // System.out.println(set);
+
       /*  try
                 (FileWriter writer = new FileWriter("LOGFILE.txt", false)){
               //writer.append(LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT))
