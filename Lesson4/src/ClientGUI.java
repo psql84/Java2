@@ -120,13 +120,13 @@ public class ClientGUI  extends JFrame implements ActionListener, Thread.Uncaugh
         System.exit(1);
     }
     public void logFile() throws IOException {   //ЛОГ ФАЙЛ   намудрил конечно но задался целью вести лог  всего чата
-       // int k=log.getLineCount();              //  конечно это работает при нажатие на клавишу надо было наверно привязать
-         String logTEXT=log.getText();           // к временным рамкам
+       // int k=log.getLineCount();              //  конечно это работает при нажатие на клавишу или Enter надо было 
+         String logTEXT=log.getText();           // наверно привязать к временным рамкам
 
         String[] arr= logTEXT.split("\n");
         ArrayList<String> arrList = new ArrayList<String>();
         for(String line: arr){
-          arrList.add(line);System.out.println(arrList);
+          arrList.add(line);//System.out.println(arrList);
 
         }
         List<String> links1 =  Files.readAllLines(Paths.get("LOGFILE.txt"), StandardCharsets.UTF_8);
