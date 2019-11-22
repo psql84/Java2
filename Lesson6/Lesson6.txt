@@ -1,0 +1,11 @@
+Вопрос только один 
+ @Override
+    public void onSocketAccepted(ServerSocket server, Socket socket) {
+        putLog("Socket accept");
+        String name = "SocketThread " +
+                socket.getInetAddress() +
+                ":" + socket.getPort();
+        new SocketThread(this, name, socket);
+    }
+
+что мы здесь зделали, как то не зашло
